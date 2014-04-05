@@ -1,0 +1,17 @@
+.metadata
+.idea
+vendor
+composer.phar
+composer.lock
+application/protected/runtime
+application/protected/runtime/application.log
+/application/nbproject/private/
+application/nbproject/
+.htaccess
+AndroidProjects/SIMLEAD/SIMLEADCLIENT/bin/
+AndroidProjects/SIMLEAD/SIMLEADCLIENT/build/
+AndroidProjects/SIMLEAD/ANDROIDBOOTSTRAP/build
+*.iml
+*.ipr
+*.iws
+
