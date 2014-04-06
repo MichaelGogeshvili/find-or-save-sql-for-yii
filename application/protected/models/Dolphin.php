@@ -8,7 +8,7 @@
  * @property string $nick
  * @property integer $pool_id
  */
-class Dolphin extends BoostRecord {
+class Dolphin extends BoostRecordAdvanced {
 	/**
 	 * @return string the associated database table name
 	 */
