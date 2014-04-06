@@ -22,18 +22,26 @@ class BoostRecord extends CActiveRecord {
    */
   public function findOrSaveWhere($attributes) {
     while($item = each($attributes)) { 
-      $k = self::camelToUnder($item['key']);
       $v = $item['value'];
+      $k = self::camelToUnder($item['key']);
+      $k = strtolower($k);
       $a[$k] = $v; 
     }
     $className = get_class($this);
     $object = $this->findByAttributes($a);
+    if ($object !== null) {
+      return $object;
+    }
     if ($object === null) {
       $object = new $className;
       $object->attributes = $a;
-      $object->save();
+      $object->validate() && $object->save();
+      if(!$object->isNewRecord) {
+        return $object;
+      }
+      else 
+        throw new RuntimeException($object->errors);
     }
-    return $object;
   }  
   /**
    * Turn text from camel case to undercored notation.
