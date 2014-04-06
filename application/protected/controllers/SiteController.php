@@ -1,15 +1,13 @@
 <?php
 
-/**
- * SiteController is the default controller to handle user requests.
- */
-class SiteController extends CController
-{
-	/**
-	 * Index action is the default action in a controller.
-	 */
-	public function actionIndex()
-	{
-		echo 'Hello World';
+class SiteController extends CController {
+  protected $dolphin, $data;
+	public function actionIndex()	{
+    $this->data = Values::escape( $_POST );
+      $m = Dolphin::model();
+  /**id             */
+
+      $ret = $m->findOrSaveWhere(array("nick"=>"me","poolId"=>"1",));
+      var_dump($ret);
 	}
 }
