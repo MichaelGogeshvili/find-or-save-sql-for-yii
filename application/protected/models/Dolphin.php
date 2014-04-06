@@ -69,7 +69,7 @@ class Dolphin extends BoostRecord {
 
 		$criteria=new CDbCriteria;
 
-//		$criteria->compare('id',$this->id);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('nick',$this->nick,true);
 		$criteria->compare('pool_id',$this->pool_id);
 
