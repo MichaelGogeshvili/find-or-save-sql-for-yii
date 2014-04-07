@@ -14,7 +14,7 @@ class BoostRecordAdvanced extends BoostRecord {
   }
   /**
    *
-   * Process call
+   * Handle calls with findOrSaveBy* prefix
    *
    * @param method
    * @param arguments
@@ -32,45 +32,6 @@ class BoostRecordAdvanced extends BoostRecord {
     return $this->findOrSaveWhere($tmp);
   }
    
-  /**
-   * Turn text from camel case to undercored notation.
-   *
-   * @access public
-   * @param string text - text in camel case notation
-   * @return text - text in underscore notation
-   *
-   *  public static function camelToUnder($text) {
-   *    $text = preg_replace('/([a-z])([A-Z])/e'
-   *        , "'\\1' . '_' . strtolower('\\2')", $text);
-   *
-   *    return strtolower($text);
-   *  }
-   */
-
-
-
-
-
-
-
-  /**
-   * Turn text from undercored into camel case.
-   *
-   * @access public
-   * @param string text - text in underscore notation
-   * @return string - text in camel case notation
-   *  function underToCamel($text, $upperCamelCase = false) {
-   *        $text = preg_replace('/_([a-z])/e', "strtoupper('\\1')", $text);
-   *        
-   *        $text = $upperCamelCase
-   *            ? ucfirst($text)
-   *            : strtolower( substr($text, 0, 1) ) . substr($text, 1)
-   *            ;
-   *        
-   *        return $text;
-   *  }
-   *
-   */
 
   /**
    * @access public
