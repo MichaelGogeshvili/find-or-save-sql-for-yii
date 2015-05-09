@@ -2,7 +2,8 @@
 /**
  * (#)protected/components/BoostRecordAdvanced.php
  */
-class BoostRecordAdvanced extends BoostRecord {
+class BoostRecordAdvanced extends BoostRecord 
+{
 
   public function __call($m, $a) {
     $prefix = $this->methodPrefix($m, 'By');
@@ -78,4 +79,44 @@ class BoostRecordAdvanced extends BoostRecord {
     * @return string imploded
     */
    public static function implode($a) { return implode('', $a); }
+
+   /**
+    * Turn text from camel case to undercored notation.
+    *
+    * @access public
+    * @param string text - text in camel case notation
+    * @return text - text in underscore notation
+    *
+    *  public static function camelToUnder($text) {
+    *    $text = preg_replace('/([a-z])([A-Z])/e'
+    *        , "'\\1' . '_' . strtolower('\\2')", $text);
+    *
+    *    return strtolower($text);
+    *  }
+    */
+
+
+
+
+
+
+
+   /**
+    * Turn text from undercored into camel case.
+    *
+    * @access public
+    * @param string text - text in underscore notation
+    * @return string - text in camel case notation
+    *  function underToCamel($text, $upperCamelCase = false) {
+    *        $text = preg_replace('/_([a-z])/e', "strtoupper('\\1')", $text);
+    *        
+    *        $text = $upperCamelCase
+    *            ? ucfirst($text)
+    *            : strtolower( substr($text, 0, 1) ) . substr($text, 1)
+    *            ;
+    *        
+    *        return $text;
+    *  }
+    *
+    */
 }
